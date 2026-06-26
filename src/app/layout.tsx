@@ -53,6 +53,7 @@ export default function RootLayout({
     >
       <head>
         <link rel="canonical" href="https://shubhamtradingco.com" />
+        <meta name="google-site-verification" content="9EB-OitpV0HAAiEohW7pz1ntlOodkCcueFZSZhtVwkE" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
