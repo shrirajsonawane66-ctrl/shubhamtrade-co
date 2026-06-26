@@ -352,12 +352,12 @@ export default function Products() {
                 const p = getProduct(slug);
                 if (!p) return null;
                 const productImages: Record<string, string> = {
-                  flyash: "/images/fly-ash.jpg",
-                  "superplast-509": "/images/concrete-pour.jpg",
-                  "superplast-401": "/images/cement-bags.jpg",
-                  "superplast-320": "/images/cement-bags.jpg",
-                  "fibertech-gf": "/images/concrete-structure.jpg",
-                  "fibertech-pp": "/images/concrete-structure.jpg",
+                  flyash: "/images/newash.jpg",
+                  "superplast-509": "/images/1img.jpeg",
+                  "superplast-401": "/images/2img.jpg",
+                  "superplast-320": "/images/3img.jpg",
+                  "fibertech-gf": "/images/gf.png",
+                  "fibertech-pp": "/images/non-gif.jpg",
                   "micro-silica": "/images/microsilica.jpeg",
                   "bulker-service": "/images/bulker-service.png",
                   "rmc-concrete": "/images/batching-plant.jpeg",

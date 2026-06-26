@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const galleryImages = [
   { src: "/images/concrete-pour.jpg", title: "Concrete Pouring Operations", category: "Infrastructure" },
   { src: "/images/cement-mixer.jpg", title: "Ready-Mix Supply", category: "Logistics" },
-  { src: "/images/fly-ash.jpg", title: "Industrial Material Supply", category: "Materials" },
+  { src: "/images/newash.jpg", title: "Industrial Material Supply", category: "Materials" },
   { src: "/images/concrete-structure.jpg", title: "Structural Concrete Work", category: "Infrastructure" },
   { src: "/images/construction-workers.jpg", title: "On-Site Execution", category: "Construction" },
   { src: "/images/cement-bags.jpg", title: "Material Storage & Distribution", category: "Logistics" },
