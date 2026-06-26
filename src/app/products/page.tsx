@@ -424,28 +424,28 @@ export default function Products() {
 
         {/* FIBER COMPARISON TABLE */}
         <AnimatedSection>
-          <section className="bg-gradient-to-r from-navy/5 to-orange/5 rounded-3xl p-8 md:p-12 border border-gray-100">
-            <h2 className="text-3xl font-bold text-navy mb-2">Product Comparison</h2>
-            <p className="text-gray-500 mb-8">
+          <section className="bg-gradient-to-r from-navy/5 to-orange/5 rounded-3xl p-5 sm:p-8 md:p-12 border border-gray-100">
+            <h2 className="text-xl sm:text-3xl font-bold text-navy mb-2">Product Comparison</h2>
+            <p className="text-gray-500 mb-6 sm:mb-8 text-sm sm:text-base">
               Technical specifications across our fiber product range
             </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
+            <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+              <table className="w-full border-collapse min-w-[500px] sm:min-w-0">
                 <thead>
                   <tr className="bg-navy text-white">
-                    <th className="px-4 py-3 text-left text-sm font-semibold rounded-tl-xl">Property</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold">Polypropylene Fibers</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold">Polyester Fibers</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold bg-orange rounded-tr-xl">FiberTech GF</th>
+                    <th className="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold rounded-tl-xl">Property</th>
+                    <th className="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold">Polypropylene Fibers</th>
+                    <th className="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold">Polyester Fibers</th>
+                    <th className="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold bg-orange rounded-tr-xl">FiberTech GF</th>
                   </tr>
                 </thead>
                 <tbody>
                   {fiberComparisonRows.map((row, i) => (
                     <tr key={i} className="border-b border-gray-100 hover:bg-white/50 transition-colors">
-                      <td className="px-4 py-3 text-sm font-semibold text-navy">{row.property}</td>
-                      <td className="px-4 py-3 text-sm text-gray-600">{row.pp}</td>
-                      <td className="px-4 py-3 text-sm text-gray-600">{row.polyester}</td>
-                      <td className="px-4 py-3 text-sm font-semibold text-orange bg-orange/5">{row.gf}</td>
+                      <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm font-semibold text-navy">{row.property}</td>
+                      <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm text-gray-600">{row.pp}</td>
+                      <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm text-gray-600">{row.polyester}</td>
+                      <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm font-semibold text-orange bg-orange/5">{row.gf}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -461,31 +461,31 @@ export default function Products() {
 
         {/* ADMIXTURE GRADE SELECTION GUIDE */}
         <AnimatedSection>
-          <section className="bg-gradient-to-r from-navy/5 to-orange/5 rounded-3xl p-8 md:p-12 border border-gray-100">
-            <h2 className="text-3xl font-bold text-navy mb-2">Choosing the Right Grade</h2>
-            <p className="text-gray-500 mb-8">
+          <section className="bg-gradient-to-r from-navy/5 to-orange/5 rounded-3xl p-5 sm:p-8 md:p-12 border border-gray-100">
+            <h2 className="text-xl sm:text-3xl font-bold text-navy mb-2">Choosing the Right Grade</h2>
+            <p className="text-gray-500 mb-6 sm:mb-8 text-sm sm:text-base">
               Select the right Superplast grade based on your concrete application
             </p>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
+            <div className="overflow-x-auto -mx-4 sm:mx-0 px-4 sm:px-0">
+              <table className="w-full border-collapse min-w-[300px] sm:min-w-0">
                 <thead>
                   <tr className="bg-navy text-white">
-                    <th className="px-4 py-3 text-left text-sm font-semibold rounded-tl-xl">Concrete Grade Required</th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold bg-orange rounded-tr-xl">Recommended Product</th>
+                    <th className="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold rounded-tl-xl">Concrete Grade Required</th>
+                    <th className="px-3 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold bg-orange rounded-tr-xl">Recommended Product</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr className="border-b border-gray-100 hover:bg-white/50">
-                    <td className="px-4 py-3 text-sm font-semibold text-navy">High-grade concrete</td>
-                    <td className="px-4 py-3 text-sm font-semibold text-orange bg-orange/5">Superplast 509</td>
+                    <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm font-semibold text-navy">High-grade concrete</td>
+                    <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm font-semibold text-orange bg-orange/5">Superplast 509</td>
                   </tr>
                   <tr className="border-b border-gray-100 hover:bg-white/50">
-                    <td className="px-4 py-3 text-sm font-semibold text-navy">Mid-grade concrete</td>
-                    <td className="px-4 py-3 text-sm font-semibold text-orange bg-orange/5">Superplast 401</td>
+                    <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm font-semibold text-navy">Mid-grade concrete</td>
+                    <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm font-semibold text-orange bg-orange/5">Superplast 401</td>
                   </tr>
                   <tr className="hover:bg-white/50">
-                    <td className="px-4 py-3 text-sm font-semibold text-navy">Normal/low-grade concrete</td>
-                    <td className="px-4 py-3 text-sm font-semibold text-orange bg-orange/5">Superplast 320</td>
+                    <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm font-semibold text-navy">Normal/low-grade concrete</td>
+                    <td className="px-3 sm:px-4 py-3 text-xs sm:text-sm font-semibold text-orange bg-orange/5">Superplast 320</td>
                   </tr>
                 </tbody>
               </table>

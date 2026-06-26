@@ -357,7 +357,7 @@ export default function Home() {
                   </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-navy mb-3">{product.title}</h3>
                   <p className="text-gray-500 leading-relaxed mb-6">{product.desc}</p>
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <p className="text-xs font-semibold text-navy uppercase tracking-wider mb-3">Applications</p>
                       <ul className="space-y-1.5">
