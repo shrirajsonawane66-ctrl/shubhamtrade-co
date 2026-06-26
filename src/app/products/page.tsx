@@ -336,7 +336,7 @@ export default function Products() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 space-y-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-24 space-y-12 sm:space-y-20">
         {categories.map((cat, ci) => (
           <section key={cat.id} id={cat.id}>
             <AnimatedSection>
@@ -499,7 +499,7 @@ export default function Products() {
         </AnimatedSection>
 
         {/* CTA */}
-        <AnimatedSection className="text-center bg-navy rounded-3xl p-12 md:p-16">
+        <AnimatedSection className="text-center bg-navy rounded-3xl p-6 sm:p-12 md:p-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Need Help Choosing the Right Product?
           </h2>
