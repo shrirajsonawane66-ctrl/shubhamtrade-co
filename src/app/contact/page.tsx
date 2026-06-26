@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatedSection } from "@/components/Animations";
@@ -38,11 +37,6 @@ export default function Contact() {
             <AnimatedSection>
               <span className="text-orange font-semibold text-sm uppercase tracking-[0.2em] mb-3 block">Get in Touch</span>
               <div className="flex items-center gap-4 mb-6">
-                <div className="relative w-16 h-16 flex-shrink-0">
-                  <Link href="/">
-                    <Image src="/stc.png" alt="Shubham Trading Co." fill className="object-contain" />
-                  </Link>
-                </div>
                 <div>
                   <h2 className="text-3xl font-bold text-navy">Contact Information</h2>
                   <p className="text-gray-500 text-sm">Shubham Trading Co.</p>

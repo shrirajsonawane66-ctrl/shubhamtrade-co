@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -45,11 +44,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-10 h-10">
-              <Image src="/stc.png" alt="STC" fill className="object-contain" />
-            </div>
-            <span className={`font-bold text-xl hidden sm:block ${scrolled ? "text-white" : "text-white"}`}>
+          <Link href="/" className="flex items-center gap-3">
+            <span className="font-bold text-xl text-white">
               Shubham Trading Co.
             </span>
           </Link>

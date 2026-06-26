@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,9 +9,6 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="relative w-12 h-12">
-                <Image src="/stc.png" alt="STC" fill className="object-contain" />
-              </div>
               <span className="font-bold text-lg">Shubham Trading Co.</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">

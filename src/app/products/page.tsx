@@ -19,6 +19,19 @@ Please share pricing and availability.`;
 
 const waQuoteUrl = `https://wa.me/919167399697?text=${encodeURIComponent(quoteMessage)}`;
 
+function waProductUrl(product: string) {
+  const msg = `Hello Shubham Trading Co,
+
+I would like a quotation for ${product}:
+
+Product: ${product}
+Quantity:
+Delivery Location:
+
+Please share pricing and availability.`;
+  return `https://wa.me/919167399697?text=${encodeURIComponent(msg)}`;
+}
+
 function HexCube({ className = "w-8 h-8" }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -174,6 +187,63 @@ const productData = {
     dosage: "0.9 kg to 1.2 kg per cubic meter",
     packing: "125g, 900g, 20kg, 50kg Bulk",
   },
+  "micro-silica": {
+    title: "Micro Silica (Silica Fume)",
+    tagline: "Maximum Strength. Maximum Durability.",
+    description:
+      "High-Performance Micro Silica engineered for superior strength and durability. Ideal for high-strength and high-performance concrete applications.",
+    details: [
+      { label: "Product Type", value: "Micro Silica (Silica Fume)" },
+      { label: "Form", value: "Fine grey powder" },
+      { label: "Application", value: "High-strength & high-performance concrete" },
+      { label: "Standards", value: "IS/IRC compliant" },
+    ],
+    benefits: [
+      "Increases compressive and flexural strength",
+      "Reduces permeability and water penetration",
+      "Improves resistance to chemicals and corrosion",
+      "Ideal for high-strength and high-performance concrete",
+      "Meets demanding construction standards",
+    ],
+  },
+  "bulker-service": {
+    title: "Cement Transportation (Bulk Cement Bulker Services)",
+    tagline: "Delivering Cement Efficiently. Keeping Projects Moving.",
+    description:
+      "Fast, safe, and efficient cement delivery for uninterrupted construction operations. Specialized bulk cement bulker fleet with dust-free and moisture-protected transportation.",
+    details: [
+      { label: "Service Type", value: "Bulk Cement Transportation" },
+      { label: "Fleet", value: "Specialized bulk cement bulker fleet" },
+      { label: "Handling", value: "Dust-free & moisture-protected" },
+      { label: "Coverage", value: "Project sites, RMC plants & grinding units" },
+    ],
+    benefits: [
+      "Safe & secure bulk cement handling",
+      "On-time delivery commitment",
+      "Cost-effective transportation solutions",
+      "High capacity bulkers for large orders",
+      "Reduced material loss during transit",
+    ],
+  },
+  "rmc-concrete": {
+    title: "Concrete Trading",
+    tagline: "Consistent Strength. Reliable Performance.",
+    description:
+      "High-quality Ready Mix Concrete (RMC) available in grades M10 to M60, designed for residential, commercial, industrial, and infrastructure construction. Manufactured with premium cement, graded aggregates, sand, and admixtures to ensure consistent strength, durability, and performance.",
+    details: [
+      { label: "Material", value: "Cement, Sand, Aggregates, Water & Admixtures" },
+      { label: "Strength Range", value: "10 MPa – 60 MPa" },
+      { label: "Supply", value: "Transit Mixer / Bulk Supply" },
+      { label: "Quality Standard", value: "Manufactured as per applicable Indian Standards" },
+    ],
+    benefits: [
+      "High compressive strength",
+      "Excellent durability and workability",
+      "Uniform quality with controlled batching",
+      "Suitable for RCC and non-RCC applications",
+      "Timely site delivery available",
+    ],
+  },
 };
 
 const fiberComparisonRows = [
@@ -212,6 +282,30 @@ export default function Products() {
       gradient: "from-navy/10 to-orange/5",
       icon: <FiberStrands />,
       products: ["fibertech-gf", "fibertech-pp"],
+    },
+    {
+      id: "micro-silica",
+      title: "Micro Silica",
+      tagline: "Maximum Strength. Maximum Durability.",
+      gradient: "from-navy/10 to-orange/5",
+      icon: <HexCube />,
+      products: ["micro-silica"],
+    },
+    {
+      id: "bulker-service",
+      title: "Cement Transportation",
+      tagline: "Your Trusted Partner for Bulk Cement Logistics.",
+      gradient: "from-navy/10 to-navy/5",
+      icon: <HexCube />,
+      products: ["bulker-service"],
+    },
+    {
+      id: "rmc-concrete",
+      title: "Concrete Trading",
+      tagline: "Consistent Strength. Reliable Performance.",
+      gradient: "from-orange/10 to-orange/5",
+      icon: <HexCube />,
+      products: ["rmc-concrete"],
     },
   ];
 
@@ -264,6 +358,9 @@ export default function Products() {
                   "superplast-320": "/images/cement-bags.jpg",
                   "fibertech-gf": "/images/concrete-structure.jpg",
                   "fibertech-pp": "/images/concrete-structure.jpg",
+                  "micro-silica": "/images/microsilica.jpeg",
+                  "bulker-service": "/images/bulker-service.png",
+                  "rmc-concrete": "/images/batching-plant.jpeg",
                 };
                 const imgSrc = productImages[slug] || "/images/hero-bg.jpg";
                 return (
@@ -304,6 +401,18 @@ export default function Products() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                           </svg>
                         </div>
+                        <a
+                          href={waProductUrl(p.title)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="mt-2 w-full text-center bg-green-500 hover:bg-green-600 text-white py-2 rounded-lg text-xs font-semibold transition-all flex items-center justify-center gap-1.5"
+                        >
+                          <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+                          </svg>
+                          Enquire on WhatsApp
+                        </a>
                       </div>
                     </div>
                   </motion.div>

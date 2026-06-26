@@ -20,6 +20,19 @@ Please share pricing and availability.`;
 
 const waQuoteUrl = `https://wa.me/919167399697?text=${encodeURIComponent(quoteMessage)}`;
 
+function waProductUrl(product: string) {
+  const msg = `Hello Shubham Trading Co,
+
+I would like a quotation for ${product}:
+
+Product: ${product}
+Quantity:
+Delivery Location:
+
+Please share pricing and availability.`;
+  return `https://wa.me/919167399697?text=${encodeURIComponent(msg)}`;
+}
+
 const trustData = [
   {
     title: "Quality Products",
@@ -110,6 +123,27 @@ const products = [
     applications: ["Concrete Slabs", "Pavements", "Waterproofing", "Plaster & Mortar"],
     benefits: ["Shrinkage Control", "Improved Toughness", "Enhanced Durability", "Easy Dispersion"],
   },
+  {
+    title: "Micro Silica (Silica Fume)",
+    desc: "High-Performance Micro Silica engineered for superior strength and durability in high-strength concrete.",
+    img: "/images/microsilica.jpeg",
+    applications: ["High-Rise Buildings", "Bridges", "Marine Structures", "Industrial Flooring", "Water Retaining Structures"],
+    benefits: ["Increases Compressive Strength", "Reduces Permeability", "Chemical & Corrosion Resistance", "High-Strength Concrete"],
+  },
+  {
+    title: "Cement Transportation",
+    desc: "Fast, safe, and efficient bulk cement delivery for uninterrupted construction operations with our specialized bulker fleet.",
+    img: "/images/bulker-service.png",
+    applications: ["RMC Plants", "Cement Grinding Units", "Infrastructure Projects", "Industrial Construction", "Large-Scale Commercial Projects"],
+    benefits: ["Safe Bulk Cement Handling", "On-Time Delivery", "Cost-Effective Transport", "Reduced Material Loss"],
+  },
+  {
+    title: "Concrete Trading",
+    desc: "High-quality Ready Mix Concrete available in grades M10 to M60 for residential, commercial, industrial, and infrastructure projects.",
+    img: "/images/batching-plant.jpeg",
+    applications: ["Foundations", "Columns & Beams", "Slabs", "Residential & Commercial Buildings", "Roads & Pavements", "Bridges & Infrastructure"],
+    benefits: ["High Compressive Strength", "Excellent Durability", "Uniform Quality", "Timely Site Delivery"],
+  },
 ];
 
 function StatCounter({ end, label, suffix = "" }: { end: number; label: string; suffix?: string }) {
@@ -135,7 +169,7 @@ export default function Home() {
           style={{
             background: `
               linear-gradient(rgba(0, 25, 80, 0.85), rgba(0, 25, 80, 0.85)),
-              url('/stc.png')
+              url('/images/herobg.png')
             `,
             backgroundSize: "cover",
             backgroundPosition: "center",
@@ -144,13 +178,9 @@ export default function Home() {
         />
         <div className="absolute inset-0 hex-pattern opacity-[0.07]" />
 
-        {/* Subtle watermark */}
-        <div className="absolute top-16 right-4 sm:right-8 lg:top-20 lg:right-16 w-32 h-32 sm:w-48 sm:h-48 opacity-[0.06] pointer-events-none">
-          <Image src="/stc.png" alt="" fill className="object-contain" />
-        </div>
-
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-xl">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            <div className="max-w-xl flex-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -225,6 +255,7 @@ export default function Home() {
                 Call Now
               </a>
             </motion.div>
+          </div>
           </div>
         </div>
       </section>
@@ -307,7 +338,7 @@ export default function Home() {
           </div>
 
           <div className="space-y-10">
-            {products.slice(0, 3).map((product, i) => (
+            {products.map((product, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -352,15 +383,28 @@ export default function Home() {
                       </ul>
                     </div>
                   </div>
-                  <Link
-                    href="/products"
-                    className="inline-flex items-center gap-2 text-orange font-semibold text-sm mt-6 hover:gap-3 transition-all duration-300"
-                  >
-                    View Full Details
-                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
+                  <div className="flex flex-wrap items-center gap-3 mt-6">
+                    <Link
+                      href="/products"
+                      className="inline-flex items-center gap-2 text-orange font-semibold text-sm hover:gap-3 transition-all duration-300"
+                    >
+                      View Full Details
+                      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <a
+                      href={waProductUrl(product.title)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-xs font-semibold transition-all"
+                    >
+                      <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+                      </svg>
+                      Enquire on WhatsApp
+                    </a>
+                  </div>
                 </div>
               </motion.div>
             ))}
