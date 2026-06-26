@@ -351,7 +351,7 @@ export default function Home() {
                   <Image src={product.img} alt={product.title} fill className="object-cover hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-tr from-navy/30 to-transparent" />
                 </div>
-                <div className="w-full lg:w-1/2 p-8 lg:p-10 flex flex-col justify-center">
+                <div className="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
                   <span className="text-orange text-xs font-semibold uppercase tracking-[0.15em] mb-2">
                     Product 0{i + 1}
                   </span>

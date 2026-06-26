@@ -88,7 +88,7 @@ export default function Contact() {
                   <h3 className="font-bold mb-1 group-hover:text-orange transition-colors">Email Address</h3>
                   <a
                     href="mailto:shubhamtradingcompany19@gmail.com"
-                    className="text-gray-600 group-hover:text-white/70 transition-colors text-sm"
+                    className="text-gray-600 group-hover:text-white/70 transition-colors text-sm break-all"
                   >
                     shubhamtradingcompany19@gmail.com
                   </a>
