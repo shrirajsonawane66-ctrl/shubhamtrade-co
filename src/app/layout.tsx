@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { siteUrl } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,6 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "STC — Shubham Trading Co. | Premium Construction Materials Supplier",
   description:
     "Trusted supplier of Fly Ash, PCE-based concrete admixtures, and construction fibers in Navi Mumbai. Quality materials for infrastructure projects. Contact us for a quote.",
@@ -25,6 +27,7 @@ export const metadata: Metadata = {
     title: "STC — Shubham Trading Co.",
     description:
       "Trusted supplier of Fly Ash, Concrete Admixtures, and Construction Fibers. Serving Navi Mumbai & Mumbai region.",
+    url: siteUrl,
     type: "website",
     locale: "en_IN",
     siteName: "Shubham Trading Co.",
@@ -52,7 +55,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth`}
     >
       <head>
-        <link rel="canonical" href="https://shubhamtradingco.com" />
+        <link rel="canonical" href={siteUrl} />
         <meta name="google-site-verification" content="9EB-OitpV0HAAiEohW7pz1ntlOodkCcueFZSZhtVwkE" />
         <script
           type="application/ld+json"
@@ -61,9 +64,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Shubham Trading Co.",
-              image: "",
-              "@id": "",
-              url: "https://shubhamtradingco.com",
+              image: `${siteUrl}/stc.png`,
+              "@id": `${siteUrl}/#business`,
+              url: siteUrl,
               telephone: "+919167399697",
               email: "shubhamtradingcompany19@gmail.com",
               address: {
